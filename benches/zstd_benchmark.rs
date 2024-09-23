@@ -87,7 +87,9 @@ fn zstd_benchmark(c: &mut Criterion) {
             TRANSACTION_COMPRESSOR_4.with(|compressor| {
                 let mut compressor = compressor.borrow_mut();
 
-                let _ = &compressor.compress(data).expect("Failed to compress");
+                let _ = &compressor
+                    .compress(black_box(data))
+                    .expect("Failed to compress");
             });
         })
     });
