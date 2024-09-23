@@ -1,0 +1,12 @@
+[package]
+name = "zstd-tx-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+criterion = "0.5.1"
+zstd = "0.13.2"
+
+[[bench]]
+name = "zstd_benchmark"
+harness = false
